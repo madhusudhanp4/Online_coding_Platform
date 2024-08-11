@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Contest - Online Coding Platform</title>
+    <link rel="stylesheet" href="/public/cssf_iles/create_contest.css">
+</head>
+<body>
+    <header>
+        <h1>Online Coding Platform</h1>
+    </header>
+
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="problems.html">Problems</a>
+        <a href="create-problem.html">Create Problem</a>
+        <a href="join-contest.html">Join Contest</a>
+        <a href="leaderboard.html">Leaderboard</a>
+    </nav>
+
+    <div class="container">
+        <h2>Create a New Contest</h2>
+        <form id="create-contest-form">
+            <label for="title">Contest Title:</label>
+            <input type="text" id="title" name="title" required>
+            
+            <label for="description">Description:</label>
+            <textarea id="description" name="description" rows="5" required></textarea>
+            
+            <label for="startTime">Start Time:</label>
+            <input type="datetime-local" id="startTime" name="startTime" required>
+            
+            <label for="endTime">End Time:</label>
+            <input type="datetime-local" id="endTime" name="endTime" required>
+            
+            <button type="submit">Create Contest</button>
+        </form>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Online Coding Platform</p>
+    </footer>
+</body>
+</html>

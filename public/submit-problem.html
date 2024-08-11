@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Submit Problem - Online Coding Platform</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .submission-container {
+            display: flex;
+            flex-direction: column;
+            margin-top: 20px;
+        }
+        #code-editor {
+            width: 100%;
+            height: 300px;
+            border: 1px solid #ccc;
+            padding: 10px;
+            font-family: monospace;
+        }
+        .actions {
+            margin-top: 10px;
+            text-align: center;
+        }
+        .feedback {
+            margin-top: 20px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            background-color: #f9f9f9;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Online Coding Platform</h1>
+    </header>
+
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="problems.html">Problems</a>
+        <a href="create-problem.html">Create Problem</a>
+        <a href="create-contest.html">Create Contest</a>
+        <a href="join-contest.html">Join Contest</a>
+        <a href="leaderboard.html">Leaderboard</a>
+    </nav>
+
+    <div class="container">
+        <h2>Submit Your Solution</h2>
+        <div class="submission-container">
+            <textarea id="code-editor" placeholder="Write your code here..."></textarea>
+            <div class="actions">
+                <button id="submit-code">Submit Solution</button>
+            </div>
+            <div id="feedback" class="feedback">
+                <p><strong>Feedback:</strong></p>
+                <pre id="feedback-text">Submission feedback will be displayed here...</pre>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Online Coding Platform</p>
+    </footer>
+
+    <script>
+        document.getElementById('submit-code').addEventListener('click', function() {
+            var code = document.getElementById('code-editor').value;
+
+            // Placeholder values for demonstration purposes
+            // Implement actual submission logic using server-side APIs
+            document.getElementById('feedback-text').textContent = 'Feedback will be displayed here...';
+
+            // Example: Use fetch to send code to server and handle the response
+            /*
+            fetch('/submit-solution', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ code: code })
+            })
+            .then(response => response.json())
+            .then(data => {
+                document.getElementById('feedback-text').textContent = data.feedback;
+            })
+            .catch(error => {
+                document.getElementById('feedback-text').textContent = 'Error: ' + error.message;
+            });
+            */
+        });
+    </script>
+</body>
+</html>

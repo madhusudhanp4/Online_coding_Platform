@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Join Contest - Online Coding Platform</title>
+    <link rel="stylesheet" href="/public/cssf_iles/join_contest.css">
+</head>
+<body>
+    <header>
+        <h1>Online Coding Platform</h1>
+    </header>
+
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="problems.html">Problems</a>
+        <a href="create-problem.html">Create Problem</a>
+        <a href="create-contest.html">Create Contest</a>
+        <a href="leaderboard.html">Leaderboard</a>
+    </nav>
+
+    <div class="container">
+        <h2>Join a Contest</h2>
+        <p>List of available contests to join will go here.</p>
+        <!-- Contest list and join functionality will be dynamically added here -->
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Online Coding Platform</p>
+    </footer>
+
+    <script>
+        fetch('/api/contests')
+            .then(response => response.json())
+            .then(data => {
+                const contestList = document.getElementById('contest-list');
+                data.forEach(contest => {
+                    const contestElement = document.createElement('div');
+                    contestElement.innerHTML = `
+                        <h3>${contest.name}</h3>
+                        <p>${contest.description}</p>
+                        <button>Join Contest</button>
+                    `;
+                    contestList.appendChild(contestElement);
+                });
+            })
+            .catch(error => console.error('Error fetching contests:', error));
+    </script>
+
+</body>
+</html>

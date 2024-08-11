@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Problems - Online Coding Platform</title>
+    <link rel="stylesheet" href="/public/cssf_iles/cproblem.css">
+</head>
+<body>
+    <header>
+        <h1>Online Coding Platform</h1>
+    </header>
+
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="problems.html" class="active">Problems</a>
+        <a href="create-problem.html">Create Problem</a>
+        <a href="create-contest.html">Create Contest</a>
+        <a href="join-contest.html">Join Contest</a>
+    </nav>
+
+    <div class="container">
+        <h2>Problems</h2>
+        <p>Here are the available problems:</p>
+        <ul id="problems-list">
+            <!-- Problems will be listed here -->
+        </ul>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Online Coding Platform</p>
+    </footer>
+
+    <script>
+        fetch('/api/problems')
+            .then(response => response.json())
+            .then(data => {
+                const problemsList = document.getElementById('problems-list');
+                data.forEach(problem => {
+                    const problemElement = document.createElement('li');
+                    problemElement.textContent = problem.title;
+                    problemsList.appendChild(problemElement);
+                });
+            })
+            .catch(error => console.error(error));
+    </script>
+</body>
+</html>

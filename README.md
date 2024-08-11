@@ -1,3 +1,5 @@
 # Online_coding_Platform
 
-#Open index.html in a browser   
+#install necessary files
+
+#run npm start
